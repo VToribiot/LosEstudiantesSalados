@@ -4,12 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoEstudiantes
+namespace LosEstudiantesSalados
 {
-    internal class Carrera
+    public class Carrera
     {
-        int idCarrera { get; set; }
+        string idCarrera { get; set; }
         string nombreCarrera { get; set; }
         int MaxCredito { get; set; }
+
+        public bool CrearCarrera(string idCarrera, string nombreCarrera, int MaxCredito)
+        {
+            return true;
+        }
     }
 }

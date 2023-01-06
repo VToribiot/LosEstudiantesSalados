@@ -6,10 +6,19 @@ using System.Threading.Tasks;
 
 namespace ProyectoEstudiantes
 {
-	class Asignatura
+	public class Asignatura
 	{
-		public string Codigo;
-		public string nombre;
-		public string creditos;
+		string Codigo { get; set; }
+		string Nombre { get; set; }
+		int Creditos { get; set; }
+
+		public Asignatura CrearAsignatura(string codigo, string nombre, int creditos)
+		{
+			Codigo = codigo;
+			Nombre = nombre;
+			Creditos = creditos;
+
+			return this;
+		}
 	}
 }
