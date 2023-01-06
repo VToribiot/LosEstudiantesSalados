@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LosEstudiantesSalados;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,18 @@ namespace LosEstudiantesSalados
 
 		public bool SeleccionarAsignatura(Asignatura asignatura)
         {
-			return true;
+			try
+			{
+                Asignaturas.Add(asignatura);
+
+                return true;
+            }
+			catch (Exception)
+			{
+
+                return false;
+            }
+		
         }
 	}
 }
