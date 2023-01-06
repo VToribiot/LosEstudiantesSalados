@@ -35,9 +35,17 @@ namespace LosEstudiantesSalados
         {
 			try
 			{
-				Asignaturas.Add(asignatura);
+                if (ValidarDuplicadosEnAsignacion(asignatura))
+                {
+					Asignaturas.Add(asignatura);
 
-				return true;
+					return true;
+				}
+                else
+                {
+                    return false;
+                }
+			
 			}
 			catch (Exception)
 			{

@@ -21,7 +21,47 @@ namespace LosEstudiantesSalados
 			Edad = edad;
 			Carrera = carrera;
 		}
-
+		public bool ValidarExistenciaAsignatura(Calificacion calificacion)
+		{
+			if (Asignaturas.Contains(calificacion.asignatura))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		public bool ValidarDulicadoCalificacion(Calificacion calificacion)
+		{
+			if (Calificaciones.Contains(calificacion))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		public bool CalificarEstudiante(Calificacion calificacion)
+		{
+			if (ValidarExistenciaAsignatura(calificacion))
+			{
+				if (ValidarDulicadoCalificacion(calificacion))
+				{
+					Calificaciones.Add(calificacion);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+			else
+			{
+				return false;
+			}
+		}
 		public bool ValidarDuplicadosEnSeleccion(Asignatura asignatura)
 		{
 			if (Asignaturas.Contains(asignatura))
@@ -37,7 +77,15 @@ namespace LosEstudiantesSalados
         {
 			try
 			{
-                Asignaturas.Add(asignatura);
+				if (ValidarDuplicadosEnSeleccion(asignatura))
+				{
+					Asignaturas.Add(asignatura);
+				}
+				else
+				{
+					return false;
+				}
+               
 
                 return true;
             }
