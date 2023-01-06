@@ -8,7 +8,8 @@ namespace LosEstudiantesSalados
 {
     public class Profesor : Persona
     {
-        string AreaAcademica { get; set; }
+		public List<Asignatura> Asignaturas = new List<Asignatura>();
+		string AreaAcademica { get; set; }
 
         public Profesor(string cedula, string nombres, string apellidos, int edad, string areaAcademica)
         {
@@ -18,11 +19,32 @@ namespace LosEstudiantesSalados
             Edad = edad;
             AreaAcademica = areaAcademica;
         }
-
+        public bool ValidarDuplicadosEnAsignacion(Asignatura asignatura)
+        {
+            if (Asignaturas.Contains(asignatura))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+            
         public bool AsignarAsignatura(Asignatura asignatura)
         {
-            return true;
-        }
+			try
+			{
+				Asignaturas.Add(asignatura);
+
+				return true;
+			}
+			catch (Exception)
+			{
+
+				return false;
+			}
+		}
 
     }
 }

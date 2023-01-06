@@ -22,6 +22,17 @@ namespace LosEstudiantesSalados
 			Carrera = carrera;
 		}
 
+		public bool ValidarDuplicadosEnSeleccion(Asignatura asignatura)
+		{
+			if (Asignaturas.Contains(asignatura))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 		public bool SeleccionarAsignatura(Asignatura asignatura)
         {
 			try
