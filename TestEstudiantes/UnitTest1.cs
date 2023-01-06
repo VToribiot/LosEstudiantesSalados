@@ -14,6 +14,7 @@ namespace TestSchool
 
             // Act
             Persona persona = new Persona();
+            Console.WriteLine(persona.GetEdad());
 
 
             // Assert
