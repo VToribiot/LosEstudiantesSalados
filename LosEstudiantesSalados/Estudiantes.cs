@@ -1,5 +1,4 @@
-﻿using ProyectoEstudiantes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,13 +8,21 @@ namespace LosEstudiantesSalados
 {
 	public class Estudiante : Persona
 	{
-		public List<Asignatura> Asignaturas { get; set; }
-		public List<Calificacion> Calificaciones { get; set; }
-		public int IdCarrera { get; set; }
+		public Carrera Carrera { get; set; }
+		public List<Asignatura> Asignaturas = new List<Asignatura>();
+		public List<Calificacion> Calificaciones = new List<Calificacion>();
 
-		public bool CrearEstudiante(string cedulaV, string ApellidoV, string NombreV, int EdadV, string carreraId)
+		public Estudiante (string cedula, string nombre, string apellido, int edad, Carrera carrera)
         {
+			Cedula = cedula;
+			Nombres = nombre;
+			Apellidos = apellido;
+			Edad = edad;
+			Carrera = carrera;
+		}
 
+		public bool SeleccionarAsignatura(Asignatura asignatura)
+        {
 			return true;
         }
 	}

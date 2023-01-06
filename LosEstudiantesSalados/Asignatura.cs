@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoEstudiantes
+namespace LosEstudiantesSalados
 {
 	public class Asignatura
 	{
@@ -12,13 +12,11 @@ namespace ProyectoEstudiantes
 		string Nombre { get; set; }
 		int Creditos { get; set; }
 
-		public Asignatura CrearAsignatura(string codigo, string nombre, int creditos)
-		{
-			Codigo = codigo;
-			Nombre = nombre;
-			Creditos = creditos;
-
-			return this;
-		}
+		public Asignatura(string codigo, string nombre, int creditos)
+        {
+            Codigo = codigo;
+            Nombre = nombre;
+            Creditos = creditos;
+        }
 	}
 }

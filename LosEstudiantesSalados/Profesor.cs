@@ -4,23 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoEstudiantes
+namespace LosEstudiantesSalados
 {
     public class Profesor : Persona
     {
-
-        List<Asignatura> Asignatura = new List<Asignatura>();
         string AreaAcademica { get; set; }
 
-        public Profesor CrearProfesor(string cedula, string nombres, string apellidos, int edad, Asignatura asignaturas, string areaAcademica)
+        public Profesor(string cedula, string nombres, string apellidos, int edad, string areaAcademica)
         {
             Cedula = cedula;
             Nombres = nombres;
             Apellidos = apellidos;
             Edad = edad;
-            Asignatura.Add(asignaturas);
             AreaAcademica = areaAcademica;
-            return this;
+        }
+
+        public bool AsignarAsignatura(Asignatura asignatura)
+        {
+            return true;
         }
 
     }

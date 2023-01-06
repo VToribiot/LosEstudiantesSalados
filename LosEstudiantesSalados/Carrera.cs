@@ -12,9 +12,11 @@ namespace LosEstudiantesSalados
         string nombreCarrera { get; set; }
         int MaxCredito { get; set; }
 
-        public bool CrearCarrera(string idCarrera, string nombreCarrera, int MaxCredito)
+        public Carrera(string carrera, string nombre, int credito)
         {
-            return true;
+            idCarrera = carrera;
+            nombreCarrera = nombre;
+            MaxCredito = credito;
         }
     }
 }
