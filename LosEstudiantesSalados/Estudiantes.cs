@@ -26,11 +26,11 @@ namespace LosEstudiantesSalados
 		{
 			if (Calificaciones.Contains(calificacion))
 			{
-				return true;
+				return false;
 			}
 			else
 			{
-				return false;
+				return true;
 			}
 		}
 		public bool CalificarEstudiante(Calificacion calificacion)
