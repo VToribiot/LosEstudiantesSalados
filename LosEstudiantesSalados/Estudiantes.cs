@@ -21,17 +21,7 @@ namespace LosEstudiantesSalados
 			Edad = edad;
 			Carrera = carrera;
 		}
-		public bool ValidarExistenciaAsignatura(Calificacion calificacion)
-		{
-			if (Asignaturas.Contains(calificacion.asignatura))
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
+		
 		public bool ValidarDulicadoCalificacion(Calificacion calificacion)
 		{
 			if (Calificaciones.Contains(calificacion))
@@ -45,7 +35,7 @@ namespace LosEstudiantesSalados
 		}
 		public bool CalificarEstudiante(Calificacion calificacion)
 		{
-			if (ValidarExistenciaAsignatura(calificacion))
+			if (ValidarDuplicadosAsignatura(calificacion.asignatura))
 			{
 				if (ValidarDulicadoCalificacion(calificacion))
 				{
@@ -62,7 +52,7 @@ namespace LosEstudiantesSalados
 				return false;
 			}
 		}
-		public bool ValidarDuplicadosEnSeleccion(Asignatura asignatura)
+		public bool ValidarDuplicadosAsignatura(Asignatura asignatura)
 		{
 			if (Asignaturas.Contains(asignatura))
 			{
@@ -77,7 +67,7 @@ namespace LosEstudiantesSalados
         {
 			try
 			{
-				if (ValidarDuplicadosEnSeleccion(asignatura))
+				if (ValidarDuplicadosAsignatura(asignatura))
 				{
 					Asignaturas.Add(asignatura);
 				}
